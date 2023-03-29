@@ -1,7 +1,7 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { LayoutPages, HomePage, ErrorPage } from '../pages/export'
+import { ErrorPage, HomePage, LayoutPages } from '@/pages'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
-const App = (): JSX.Element => {
+const RoutesProvider = (): JSX.Element => {
   return (
     <BrowserRouter>
       <Routes>
@@ -15,4 +15,4 @@ const App = (): JSX.Element => {
   )
 }
 
-export { App }
+export { RoutesProvider }
