@@ -1,9 +1,10 @@
+import { Header } from '@/components'
 import { Outlet } from 'react-router-dom'
 
 const LayoutPages = (): JSX.Element => {
   return (
     <>
-      <header>header</header>
+      <Header />
       <Outlet />
       <footer>footer</footer>
     </>

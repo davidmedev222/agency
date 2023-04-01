@@ -64,6 +64,10 @@ const StylesProvider = createGlobalStyle`
     grid-template-columns: 1fr;
     grid-template-rows: auto 1fr auto;
   }
+
+  header, main, footer {
+    padding: clamp(1rem, 2vw, 4rem) clamp(1rem, 6vw, 12rem);
+  }
   
   img,
   picture,
