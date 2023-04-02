@@ -47,6 +47,17 @@ interface IGlobalContextCareers {
   items: IGlobalContextCareersItem[]
 }
 
+interface IGlobalContextScocialNewtWork {
+  id: number
+  social: string
+  to: string
+}
+
+interface IGlobalContextSocial {
+  email: string
+  networks: IGlobalContextScocialNewtWork[]
+}
+
 interface IGlobalContextFooter {
   copyright: string
 }
@@ -58,5 +69,6 @@ export interface IGlobalContext {
   services: IGlobalContextServices
   about: IGlobalContextAbout
   careers: IGlobalContextCareers
+  social: IGlobalContextSocial
   footer: IGlobalContextFooter
 }

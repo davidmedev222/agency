@@ -115,6 +115,31 @@ const GlobalProvider = ({ children }: Props): JSX.Element => {
         }
       ]
     },
+    social: {
+      email: 'agency@gmail.com',
+      networks: [
+        {
+          id: 1,
+          social: 'Instagram',
+          to: 'https://www.instagram.com/davidmedev/'
+        },
+        {
+          id: 2,
+          social: 'Linkedin',
+          to: 'https://www.linkedin.com/in/davidmedev/'
+        },
+        {
+          id: 3,
+          social: 'Behance',
+          to: 'https://www.behance.net/'
+        },
+        {
+          id: 4,
+          social: 'Tiktok',
+          to: 'https://www.tiktok.com/'
+        }
+      ]
+    },
     footer: {
       copyright: 'Agency © 2023'
     }
