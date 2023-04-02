@@ -1,4 +1,4 @@
-import { About, Careers, Clients, Hero, Services } from '@/components'
+import { About, Careers, Clients, Hero, Services, Social } from '@/components'
 import styled from 'styled-components'
 
 const MainStyled = styled('main')`
@@ -14,6 +14,7 @@ const HomePage = (): JSX.Element => {
       <Services />
       <About />
       <Careers />
+      <Social />
     </MainStyled>
   )
 }
