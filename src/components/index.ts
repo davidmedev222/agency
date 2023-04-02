@@ -1,4 +1,6 @@
 export * from './about/About'
+export * from './careers/Careers'
+export * from './careers/CareersItem'
 export * from './clients/Clients'
 export * from './footer/Footer'
 export * from './header/Header'
