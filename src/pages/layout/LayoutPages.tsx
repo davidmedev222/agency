@@ -1,4 +1,4 @@
-import { Header } from '@/components'
+import { Footer, Header } from '@/components'
 import { Outlet } from 'react-router-dom'
 
 const LayoutPages = (): JSX.Element => {
@@ -6,7 +6,7 @@ const LayoutPages = (): JSX.Element => {
     <>
       <Header />
       <Outlet />
-      <footer>footer</footer>
+      <Footer />
     </>
   )
 }

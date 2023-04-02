@@ -1,4 +1,5 @@
 export * from './clients/Clients'
+export * from './footer/Footer'
 export * from './header/Header'
 export * from './hero/Hero'
 export * from './hero/HeroProject'
