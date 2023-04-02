@@ -25,6 +25,10 @@ const GlobalContext = createContext<IGlobalContext>({
     title: '',
     description: ''
   },
+  social: {
+    email: '',
+    networks: [{ id: 1, social: '', to: '' }]
+  },
   footer: {
     copyright: ''
   }
