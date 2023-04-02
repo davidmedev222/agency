@@ -1,6 +1,6 @@
 import { GlobalProvider } from '@/context'
 import { RoutesProvider } from '@/routes'
-import { StylesProvider } from '@/styles'
+import { StylesProvider } from '@/styles-components'
 
 const App = (): JSX.Element => {
   return (

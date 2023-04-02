@@ -1,10 +1,17 @@
-import { Hero } from '@/components'
+import { Hero, Clients } from '@/components'
+import styled from 'styled-components'
+
+const MainStyled = styled('main')`
+  display: grid;
+  gap: clamp(12.5rem, 15vw, 30rem);
+`
 
 const HomePage = (): JSX.Element => {
   return (
-    <main>
+    <MainStyled>
       <Hero />
-    </main>
+      <Clients />
+    </MainStyled>
   )
 }
 
