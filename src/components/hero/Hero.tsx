@@ -33,7 +33,7 @@ const HeroProjects = styled('section')`
   grid-area: projects;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: clamp(1.5rem, 2vw, 4rem);
+  gap: clamp(3rem, 3.5vw, 7rem) clamp(2rem, 2vw, 4rem);
 
  @media screen and (max-width: 64rem) {
     grid-template-columns: 1fr;
