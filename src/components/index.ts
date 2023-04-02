@@ -1,3 +1,5 @@
 export * from './header/Header'
+export * from './hero/Hero'
+export * from './hero/HeroProject'
 export * from './icons/IconArrowRight'
 export * from './icons/IconStar'
