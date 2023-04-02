@@ -9,6 +9,7 @@ const HeroStyled = styled('section')`
   "projects projects"
   / 1fr 1fr;
   align-items: center;
+  gap: clamp(2.5rem, 10vw, 20rem) 0;
 
  @media screen and (max-width: 64rem) {
     grid-template: 
@@ -20,11 +21,13 @@ const HeroStyled = styled('section')`
 `
 const HeroHeading = styled('h1')`
   font-size: clamp(3.75rem, 7.25vw, 14.5rem);
-  padding: clamp(6rem, 8vw, 16rem) 0 clamp(2rem, 8vw, 16rem) 0;
 `
 const HeroParagraph = styled('p')`
   font-size: clamp(1.25rem, 1.75vw, 3.5rem);
-  padding: clamp(2rem, 8vw, 16rem) 0 clamp(6rem, 8vw, 16rem) 0;
+  
+  @media screen and (max-width: 49.75rem) {
+    padding: 0 0 6rem 0;
+  }
 `
 const HeroProjects = styled('section')`
   grid-area: projects;

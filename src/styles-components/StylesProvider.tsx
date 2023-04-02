@@ -65,6 +65,7 @@ const StylesProvider = createGlobalStyle`
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto 1fr auto;
+    gap: clamp(12.5rem, 16.25vw, 32.5rem);
   }
 
   header, main, footer {
