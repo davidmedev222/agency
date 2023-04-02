@@ -21,7 +21,7 @@ const WrapperIcons = styled('div')`
   gap: clamp(2rem, 3.75vw, 7.5rem) clamp(2rem, 7.5vw, 15rem) ;
 
   & svg {
-    fill: white;
+    fill: var(--i-component-one);
     width: clamp(6.25rem, 12.5vw, 25rem);
   }
 `

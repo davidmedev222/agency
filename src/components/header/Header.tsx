@@ -12,7 +12,7 @@ const HeaderStyled = styled('header')`
 
   & svg {
     width: clamp(1.5rem, 2vw, 4rem);
-    fill: white;
+    fill: var(--i-component-one);
   }
 `
 const HeadingRedirect = styled(Link)`

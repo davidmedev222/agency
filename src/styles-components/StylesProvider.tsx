@@ -7,6 +7,8 @@ const StylesProvider = createGlobalStyle`
     --text-two: #bbbbbb;
     // BACKGROUNDS
     --background-one: #111111;
+    // COMPONENTS
+    --i-component-one: #ffffff;
     // TYPOGRAPHY
     --family-one: 'Epilogue', sans-serif;
   }
