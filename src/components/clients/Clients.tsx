@@ -6,6 +6,7 @@ import styled from 'styled-components'
 const ClientsStyled = styled('section')`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  align-items: flex-start;
   
   @media screen and (max-width: 49.75rem) {
     grid-template-columns: 1fr;
