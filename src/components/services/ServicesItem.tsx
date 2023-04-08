@@ -4,7 +4,7 @@ import styled from 'styled-components'
 const ServicesItemStyled = styled('li')`
   display: flex;
   flex-flow: column nowrap;
-  gap: clamp(2rem, 2vw, 4rem);
+  gap: clamp(1rem, 2vw, 4rem);
 
   svg {
     fill: var(--i-component-one);

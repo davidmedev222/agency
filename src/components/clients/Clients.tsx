@@ -23,7 +23,7 @@ const WrapperIcons = styled('div')`
 
   & svg {
     fill: var(--i-component-one);
-    width: clamp(6.25rem, 12.5vw, 25rem);
+    width: clamp(10rem, 12.5vw, 25rem);
   }
 `
 
