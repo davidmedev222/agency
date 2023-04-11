@@ -1,4 +1,5 @@
 export * from './hero/Hero'
 export * from './project/ProjectWrapper'
 export * from './target/FirstTarget'
+export * from './testimony/Testimony'
 export * from './video/Video'

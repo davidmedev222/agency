@@ -1,5 +1,5 @@
 import { Project } from '@/models/project.models'
-import { FirstTarget, Hero, Video } from '@/pages/project/components'
+import { FirstTarget, Hero, Testimony, Video } from '@/pages/project/components'
 
 interface Props {
   project: Project
@@ -13,7 +13,8 @@ const ProjectWrapper = ({ project }: Props): JSX.Element => {
     videoURL,
     firstTitleTarget,
     firstDescriptionTarget,
-    firstPhotosURL
+    firstPhotosURL,
+    testimony
   } = project
 
   return (
@@ -21,6 +22,7 @@ const ProjectWrapper = ({ project }: Props): JSX.Element => {
       <Hero title={title} category={category} description={description} />
       <Video videoURL={videoURL} autoplay muted loop />
       <FirstTarget title={firstTitleTarget} description={firstDescriptionTarget} images={firstPhotosURL} />
+      <Testimony {...testimony} />
     </>
   )
 }
