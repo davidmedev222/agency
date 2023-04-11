@@ -32,7 +32,7 @@ interface Props {
 const HeroProject = ({ to, image, title, category }: Props): JSX.Element => {
   return (
     <HeroProjectStyled>
-      <HeroProjectRedirect to={to}><HeroProjectImage src={image} alt={title} /></HeroProjectRedirect>
+      <HeroProjectRedirect to={`/project/${to}`}><HeroProjectImage src={image} alt={title} /></HeroProjectRedirect>
       <HeroProjectTitle>{title}</HeroProjectTitle>
       <HeroProjectCategory>{category}</HeroProjectCategory>
     </HeroProjectStyled>
