@@ -1,4 +1,4 @@
-interface ProjectPhotoURL {
+export interface ProjectPhotoURL {
   id: number
   url: string
   alt: string
