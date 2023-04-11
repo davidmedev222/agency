@@ -1,6 +1,12 @@
 import { ProjectWrapper } from '@/pages/project/components'
 import { projects } from '@/services'
 import { useParams } from 'react-router-dom'
+import styled from 'styled-components'
+
+const ProjectPageStyled = styled('main')`
+  display: grid;
+  gap: clamp(5rem, 10vw, 20rem);
+`
 
 const ProjectPage = (): JSX.Element => {
   const { name } = useParams()
@@ -8,9 +14,9 @@ const ProjectPage = (): JSX.Element => {
   const project = foundProject[0]
 
   return (
-    <main>
+    <ProjectPageStyled>
       {foundProject.length > 0 ? <ProjectWrapper project={project} /> : 'page not found'}
-    </main>
+    </ProjectPageStyled>
   )
 }
 
