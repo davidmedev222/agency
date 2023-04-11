@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 const HeaderStyled = styled('header')`
+  position: sticky;
+  top: 0;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
