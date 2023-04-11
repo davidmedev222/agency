@@ -46,7 +46,7 @@ const Testimony = ({ comment, photoURL, name, job }: Props): JSX.Element => {
     <TestimonyStyled>
       <TestimonyComment>{comment}</TestimonyComment>
       <TestimonyDetail>
-        <TestimonyImage src={photoURL} alt={name} />
+        <TestimonyImage src={photoURL} alt={name} loading='lazy' />
         <TestimonyName>
           {name}
           <TestimonyJob>{job}</TestimonyJob>

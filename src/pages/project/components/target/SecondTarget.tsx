@@ -42,7 +42,7 @@ const SecondTarget = ({ title, description, images }: Props): JSX.Element => {
       <SecondTargetHeading>{title}</SecondTargetHeading>
       <SecondTargetDescription>{description}</SecondTargetDescription>
       <WrapperImages>
-        {images.map((image) => <SecondTargetImage key={image.id} src={image.url} alt={image.alt} />)}
+        {images.map((image) => <SecondTargetImage key={image.id} src={image.url} alt={image.alt} loading='lazy' />)}
       </WrapperImages>
     </SecondTargetStyled>
   )

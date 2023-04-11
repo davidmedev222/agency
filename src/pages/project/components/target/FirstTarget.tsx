@@ -55,7 +55,7 @@ const FirstTarget = ({ title, description, images }: Props): JSX.Element => {
       <WrapperImages>
         {images.map((image) => {
           return (
-            <FirstTargetImage key={image.id} src={image.url} alt={image.alt} />
+            <FirstTargetImage key={image.id} src={image.url} alt={image.alt} loading='lazy' />
           )
         })}
       </WrapperImages>
