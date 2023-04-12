@@ -1,3 +1,4 @@
+import { Error } from '@/components'
 import { ProjectWrapper } from '@/pages/project/components'
 import { projects } from '@/services'
 import { useParams } from 'react-router-dom'
@@ -15,7 +16,9 @@ const ProjectPage = (): JSX.Element => {
 
   return (
     <ProjectPageStyled>
-      {foundProject.length > 0 ? <ProjectWrapper project={project} /> : 'page not found'}
+      {foundProject.length > 0
+        ? <ProjectWrapper project={project} />
+        : <Error code='404' message='Page Not Found' to='/' />}
     </ProjectPageStyled>
   )
 }

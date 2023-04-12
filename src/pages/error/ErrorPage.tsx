@@ -1,7 +1,9 @@
+import { Error } from '@/components'
+
 const ErrorPage = (): JSX.Element => {
   return (
     <main>
-      404, error page
+      <Error code='404' message='Page Not Found' to='/' />
     </main>
   )
 }
