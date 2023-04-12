@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 const VideoStyled = styled('video')`
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 2 / 1;
 `
 
 interface Props {
