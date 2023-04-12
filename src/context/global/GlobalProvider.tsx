@@ -54,7 +54,7 @@ const GlobalProvider = ({ children }: Props): JSX.Element => {
           image: 'https://res.cloudinary.com/dos3i5jqy/image/upload/v1680190995/devagency/images/hero-project-6_t69rgp.png',
           title: 'Sen Bros',
           category: 'Branding - 3D',
-          to: 'sen-bros'
+          to: 'senbros'
         }
       ]
     },

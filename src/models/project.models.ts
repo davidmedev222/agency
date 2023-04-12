@@ -12,6 +12,7 @@ interface ProjectTestimony {
 }
 
 export interface Project {
+  tag: string
   id: number
   title: string
   category: string

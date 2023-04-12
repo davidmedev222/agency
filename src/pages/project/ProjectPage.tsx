@@ -10,7 +10,7 @@ const ProjectPageStyled = styled('main')`
 
 const ProjectPage = (): JSX.Element => {
   const { name } = useParams()
-  const foundProject = projects.filter((project) => project.title.toLowerCase() === name)
+  const foundProject = projects.filter((project) => project.tag === name)
   const project = foundProject[0]
 
   return (
