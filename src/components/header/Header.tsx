@@ -11,6 +11,7 @@ const HeaderStyled = styled('header')`
   justify-content: space-between;
   align-items: center;
   background-color: var(--background-one);
+  z-index: 1;
 
   & svg {
     width: clamp(1.5rem, 2vw, 4rem);
