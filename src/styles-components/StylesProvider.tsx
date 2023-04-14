@@ -1,3 +1,4 @@
+import { attributes } from '@/styles-components/utils'
 import { createGlobalStyle } from 'styled-components'
 
 const StylesProvider = createGlobalStyle`
@@ -142,6 +143,8 @@ const StylesProvider = createGlobalStyle`
     width: 100%;
     display: block;
   }
+
+  ${attributes}
 `
 
 export { StylesProvider }
