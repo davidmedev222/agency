@@ -1,5 +1,5 @@
 import { IconStar } from '@/components'
-import { useGlobalProvider } from '@/hooks'
+import { useGlobalProvider, useIntersectionObserver } from '@/hooks'
 import styled from 'styled-components'
 
 const FooterStyled = styled('footer')`
@@ -20,9 +20,12 @@ const FooterCopyright = styled('h6')`
 
 const Footer = (): JSX.Element => {
   const { footer } = useGlobalProvider()
+  const [ref1, isIntersecting] = useIntersectionObserver({
+    threshold: 0.5
+  }, true)
 
   return (
-    <FooterStyled>
+    <FooterStyled ref={ref1} data-opacity data-fade-opacity={isIntersecting}>
       <IconStar />
       <FooterCopyright>{footer.copyright}</FooterCopyright>
     </FooterStyled>
