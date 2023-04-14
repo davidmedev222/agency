@@ -1,3 +1,4 @@
+import { useIntersectionObserver } from '@/hooks'
 import { ProjectPhotoURL } from '@/models/project.models'
 import styled from 'styled-components'
 
@@ -46,13 +47,20 @@ interface Props {
 }
 
 const FirstTarget = ({ title, description, images }: Props): JSX.Element => {
+  const [ref1, isIntersecting1] = useIntersectionObserver({
+    threshold: 0.5
+  }, true)
+  const [ref2, isIntersecting2] = useIntersectionObserver({
+    threshold: 0.1
+  }, true)
+
   return (
     <FirstTargetStyled>
-      <WrapperText>
-        <FirstTargetHeading>{title}</FirstTargetHeading>
-        <FirstTargetDescription>{description}</FirstTargetDescription>
+      <WrapperText ref={ref1}>
+        <FirstTargetHeading data-opacity data-fade-bottom={isIntersecting1} data-delay='100'>{title}</FirstTargetHeading>
+        <FirstTargetDescription data-opacity data-fade-bottom={isIntersecting1} data-delay='200'>{description}</FirstTargetDescription>
       </WrapperText>
-      <WrapperImages>
+      <WrapperImages ref={ref2} data-opacity data-fade-bottom={isIntersecting2} data-delay='300'>
         {images.map((image) => {
           return (
             <FirstTargetImage key={image.id} src={image.url} alt={image.alt} loading='lazy' />

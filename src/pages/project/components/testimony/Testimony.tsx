@@ -1,3 +1,4 @@
+import { useIntersectionObserver } from '@/hooks'
 import styled from 'styled-components'
 
 const TestimonyStyled = styled('div')`
@@ -42,10 +43,14 @@ interface Props {
 }
 
 const Testimony = ({ comment, photoURL, name, job }: Props): JSX.Element => {
+  const [ref1, isIntersecting1] = useIntersectionObserver({
+    threshold: 0.25
+  }, true)
+
   return (
-    <TestimonyStyled>
-      <TestimonyComment>{comment}</TestimonyComment>
-      <TestimonyDetail>
+    <TestimonyStyled ref={ref1}>
+      <TestimonyComment data-opacity data-fade-bottom={isIntersecting1} data-delay='200'>{comment}</TestimonyComment>
+      <TestimonyDetail data-opacity data-fade-bottom={isIntersecting1} data-delay='200'>
         <TestimonyImage src={photoURL} alt={name} loading='lazy' />
         <TestimonyName>
           {name}

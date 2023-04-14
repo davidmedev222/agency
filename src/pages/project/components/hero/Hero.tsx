@@ -1,3 +1,4 @@
+import { useIntersectionObserver } from '@/hooks'
 import styled from 'styled-components'
 
 const HeroStyled = styled('section')`
@@ -34,10 +35,14 @@ interface Props {
 }
 
 const Hero = ({ title, category, description }: Props): JSX.Element => {
+  const [ref1, isIntersecting1] = useIntersectionObserver({
+    threshold: 0.5
+  }, true)
+
   return (
-    <HeroStyled>
-      <HeroHeading>{title}</HeroHeading>
-      <HeroInfo>
+    <HeroStyled ref={ref1}>
+      <HeroHeading data-opacity data-fade-bottom={isIntersecting1} data-delay='100'>{title}</HeroHeading>
+      <HeroInfo data-opacity data-fade-bottom={isIntersecting1} data-delay='200'>
         <HeroCategory>{category}</HeroCategory>
         <HeroDescription>{description}</HeroDescription>
       </HeroInfo>

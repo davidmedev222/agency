@@ -1,3 +1,4 @@
+import { useIntersectionObserver } from '@/hooks'
 import styled from 'styled-components'
 
 const VideoStyled = styled('video')`
@@ -12,9 +13,13 @@ interface Props {
   controls?: boolean
 }
 
-const Video = ({ videoURL, autoplay, muted, controls, loop }: Props): JSX.Element => {
+const Video = ({ videoURL, autoplay, muted, controls = true, loop }: Props): JSX.Element => {
+  const [ref1, isIntersecting1] = useIntersectionObserver({
+    threshold: 0.5
+  }, true)
+
   return (
-    <VideoStyled src={videoURL} autoPlay={autoplay} muted={muted} controls={controls} loop={loop} />
+    <VideoStyled ref={ref1} data-opacity data-fade-opacity={isIntersecting1} src={videoURL} autoPlay={autoplay} muted={muted} controls={controls} loop={loop} />
   )
 }
 

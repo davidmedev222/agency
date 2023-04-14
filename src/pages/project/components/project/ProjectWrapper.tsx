@@ -24,7 +24,7 @@ const ProjectWrapper = ({ project }: Props): JSX.Element => {
   return (
     <>
       <Hero title={title} category={category} description={description} />
-      <Video videoURL={videoURL} autoplay muted loop />
+      <Video videoURL={videoURL} />
       <FirstTarget title={firstTitleTarget} description={firstDescriptionTarget} images={firstPhotosURL} />
       <Testimony {...testimony} />
       <SecondTarget title={secondTitleTarget} description={secondDescriptionTarget} images={secondPhotosURL} />
