@@ -1,5 +1,5 @@
 import { IconCoinbase, IconDropbox, IconSpotify, IconWebFlow } from '@/components'
-import { useGlobalProvider } from '@/hooks'
+import { useGlobalProvider, useIntersectionObserver } from '@/hooks'
 import { Heading } from '@/styles-components'
 import styled from 'styled-components'
 
@@ -30,14 +30,18 @@ const WrapperIcons = styled('div')`
 const Clients = (): JSX.Element => {
   const { clients } = useGlobalProvider()
 
+  const [ref1, isIntersecting1] = useIntersectionObserver({
+    threshold: 0.5
+  }, true)
+
   return (
-    <ClientsStyled>
-      <Heading>{clients.title}</Heading>
+    <ClientsStyled ref={ref1}>
+      <Heading data-opacity data-fade-bottom={isIntersecting1} data-delay='100'>{clients.title}</Heading>
       <WrapperIcons>
-        <IconCoinbase />
-        <IconDropbox />
-        <IconSpotify />
-        <IconWebFlow />
+        <IconCoinbase data-opacity data-fade-bottom={isIntersecting1} data-delay='200' />
+        <IconDropbox data-opacity data-fade-bottom={isIntersecting1} data-delay='400' />
+        <IconSpotify data-opacity data-fade-bottom={isIntersecting1} data-delay='600' />
+        <IconWebFlow data-opacity data-fade-bottom={isIntersecting1} data-delay='900' />
       </WrapperIcons>
     </ClientsStyled>
   )
