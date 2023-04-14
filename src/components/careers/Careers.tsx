@@ -1,5 +1,5 @@
 import { CareersItem } from '@/components'
-import { useGlobalProvider } from '@/hooks'
+import { useGlobalProvider, useIntersectionObserver } from '@/hooks'
 import { Heading } from '@/styles-components'
 import styled from 'styled-components'
 
@@ -21,15 +21,19 @@ const CareersList = styled('ul')`
 
 const Careers = (): JSX.Element => {
   const { careers } = useGlobalProvider()
+  const [ref1, isIntersecting1] = useIntersectionObserver({
+    threshold: 0.5
+  }, true)
 
-  const listOfCareers = careers.items.map((career) => {
+  const listOfCareers = careers.items.map((career, index) => {
     const { id, country, job } = career
-    return <CareersItem key={id} country={country} job={job} />
+    const delay = 200 * (index + 1)
+    return <CareersItem key={id} country={country} job={job} animationDelay={delay} />
   })
 
   return (
     <CareersStyled>
-      <Heading as='h5'>{careers.title}</Heading>
+      <Heading as='h5' ref={ref1} data-opacity data-fade-bottom={isIntersecting1} data-delay='100'>{careers.title}</Heading>
       <CareersList>
         {listOfCareers}
       </CareersList>
