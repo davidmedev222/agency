@@ -1,4 +1,5 @@
 import { IconStar } from '@/components'
+import { useIntersectionObserver } from '@/hooks'
 import styled from 'styled-components'
 
 const ServicesItemStyled = styled('li')`
@@ -22,11 +23,16 @@ const ServicesItemDescription = styled('p')`
 interface Props {
   title: string
   description: string
+  animationDelay: number
 }
 
-const ServicesItem = ({ title, description }: Props): JSX.Element => {
+const ServicesItem = ({ title, description, animationDelay }: Props): JSX.Element => {
+  const [ref1, isIntersecting1] = useIntersectionObserver({
+    threshold: 0.5
+  }, true)
+
   return (
-    <ServicesItemStyled>
+    <ServicesItemStyled ref={ref1} data-opacity data-fade-bottom={isIntersecting1} data-delay={animationDelay}>
       <IconStar />
       <ServicesItemTitle>{title}</ServicesItemTitle>
       <ServicesItemDescription>{description}</ServicesItemDescription>

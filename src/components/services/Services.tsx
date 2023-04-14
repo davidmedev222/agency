@@ -1,6 +1,6 @@
-import { useGlobalProvider } from '@/hooks'
-import { Heading } from '@/styles-components'
 import { ServicesItem } from '@/components'
+import { useGlobalProvider, useIntersectionObserver } from '@/hooks'
+import { Heading } from '@/styles-components'
 import styled from 'styled-components'
 
 const ServicesStyled = styled('section')`
@@ -22,14 +22,19 @@ const ServicesList = styled('ul')`
 const Services = (): JSX.Element => {
   const { services } = useGlobalProvider()
 
-  const listOfServices = services.items.map((service) => {
+  const [ref1, isIntersecting1] = useIntersectionObserver({
+    threshold: 0.5
+  }, true)
+
+  const listOfServices = services.items.map((service, index) => {
     const { id, description, title } = service
-    return <ServicesItem key={id} description={description} title={title} />
+    const delay = 200 * (index + 1)
+    return <ServicesItem key={id} description={description} title={title} animationDelay={delay} />
   })
 
   return (
     <ServicesStyled>
-      <Heading as='h3'>{services.title}</Heading>
+      <Heading as='h3' ref={ref1} data-opacity data-fade-bottom={isIntersecting1} data-delay='100'>{services.title}</Heading>
       <ServicesList>
         {listOfServices}
       </ServicesList>
