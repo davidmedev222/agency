@@ -1,5 +1,5 @@
 import { HeroProject } from '@/components'
-import { useGlobalProvider } from '@/hooks'
+import { useGlobalProvider, useIntersectionObserver } from '@/hooks'
 import styled from 'styled-components'
 
 const HeroStyled = styled('section')`
@@ -43,16 +43,23 @@ const HeroProjects = styled('section')`
 const Hero = (): JSX.Element => {
   const { hero } = useGlobalProvider()
 
+  const [ref1, isIntersecting1] = useIntersectionObserver({
+    threshold: 0
+  }, true)
+  const [ref2, isIntersecting2] = useIntersectionObserver({
+    threshold: 0.1
+  }, true)
+
   const projects = hero.projects.map((project) => {
     const { id, image, category, title, to } = project
     return <HeroProject key={id} image={image} category={category} title={title} to={to} />
   })
 
   return (
-    <HeroStyled>
-      <HeroHeading>{hero.title}</HeroHeading>
-      <HeroParagraph>{hero.description}</HeroParagraph>
-      <HeroProjects>{projects}</HeroProjects>
+    <HeroStyled ref={ref1}>
+      <HeroHeading data-opacity data-fade-bottom={isIntersecting1} data-delay='100'>{hero.title}</HeroHeading>
+      <HeroParagraph data-opacity data-fade-bottom={isIntersecting1} data-delay='150'>{hero.description}</HeroParagraph>
+      <HeroProjects ref={ref2} data-opacity data-fade-bottom={isIntersecting2} data-delay='100'>{projects}</HeroProjects>
     </HeroStyled>
   )
 }
