@@ -1,4 +1,4 @@
-import { useGlobalProvider } from '@/hooks'
+import { useGlobalProvider, useIntersectionObserver } from '@/hooks'
 import { Heading } from '@/styles-components'
 import styled from 'styled-components'
 
@@ -19,11 +19,14 @@ const AboutDescription = styled('p')`
 
 const About = (): JSX.Element => {
   const { about } = useGlobalProvider()
+  const [ref1, isIntersecting1] = useIntersectionObserver({
+    threshold: 0.5
+  }, true)
 
   return (
-    <AboutStyled>
-      <Heading as='h4'>{about.title}</Heading>
-      <AboutDescription>{about.description}</AboutDescription>
+    <AboutStyled ref={ref1}>
+      <Heading as='h4' data-opacity data-fade-bottom={isIntersecting1} data-delay='100'>{about.title}</Heading>
+      <AboutDescription data-opacity data-fade-bottom={isIntersecting1} data-delay='200'>{about.description}</AboutDescription>
     </AboutStyled>
   )
 }
