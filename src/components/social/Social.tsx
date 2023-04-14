@@ -1,5 +1,5 @@
 import { IconArrowRight } from '@/components'
-import { useGlobalProvider } from '@/hooks'
+import { useGlobalProvider, useIntersectionObserver } from '@/hooks'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
@@ -36,15 +36,19 @@ const SocialNetworkRedirect = styled(Link)`
 `
 const Social = (): JSX.Element => {
   const { social } = useGlobalProvider()
+  const [ref1, isIntersecting1] = useIntersectionObserver({
+    threshold: 0.5
+  }, true)
 
   return (
-    <SocialStyled>
-      <SocialEmail to='mailto:davidmedev@gmail.com'>{social.email}<IconArrowRight />
+    <SocialStyled ref={ref1}>
+      <SocialEmail to='mailto:davidmedev@gmail.com' data-opacity data-fade-bottom={isIntersecting1} data-delay='100'>{social.email}<IconArrowRight />
       </SocialEmail>
       <SocialList>
-        {social.networks.map((network) => {
+        {social.networks.map((network, index) => {
           const { id, social, to } = network
-          return <SocialNetworkRedirect key={id} to={to}>{social}</SocialNetworkRedirect>
+          const delay = 200 * (index + 1)
+          return <SocialNetworkRedirect key={id} to={to} data-opacity data-fade-bottom={isIntersecting1} data-delay={delay}>{social}</SocialNetworkRedirect>
         })}
       </SocialList>
     </SocialStyled>
