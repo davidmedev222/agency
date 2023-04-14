@@ -1,5 +1,5 @@
 import { IconArrowRight, IconStar } from '@/components'
-import { useGlobalProvider } from '@/hooks'
+import { useGlobalProvider, useIntersectionObserver } from '@/hooks'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
@@ -35,8 +35,12 @@ const HeadingRedirect = styled(Link)`
 const Header = (): JSX.Element => {
   const { header } = useGlobalProvider()
 
+  const [ref1, isIntersecting1] = useIntersectionObserver({
+    threshold: 0.5
+  }, true)
+
   return (
-    <HeaderStyled>
+    <HeaderStyled ref={ref1} data-opacity data-fade-opacity={isIntersecting1}>
       <IconStar />
       <HeadingRedirect to='mailto:davidmedev@gmail.com'>
         {header.email}
