@@ -13,6 +13,12 @@ const HeroProjectRedirect = styled(Link)`
 `
 const HeroProjectImage = styled('img')`
   aspect-ratio: 1;
+  transition: opacity 500ms;
+  border-radius: clamp(1rem, 1vw, 2rem);
+
+  :hover {
+    opacity: 0.5;
+  }
 `
 const HeroProjectTitle = styled('h2')`
   font-size: clamp(1.25rem, 1.25vw, 2.5rem);

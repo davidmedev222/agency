@@ -25,10 +25,19 @@ const HeadingRedirect = styled(Link)`
   justify-content: center;
   align-items: center;
   gap: .5rem;
-
+  transition: color 250ms;
+  
+  
   & svg {
+    fill: var(--i-component-one);
     width: clamp(1.25rem, 1.5vw, 2rem);
     transform: rotate(-45deg);
+    transition: fill 250ms;
+  }
+
+  :hover {
+    color: var(--text-one-hover);
+    --i-component-one: var(--text-one-hover);
   }
 `
 

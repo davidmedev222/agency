@@ -4,9 +4,9 @@ import { fadeBottom } from '@/styles-components/utils'
 export const attributes = css`
   [data-opacity=true] {
     opacity: 0;
-    transition: opacity 1000ms;
   }
   [data-fade-opacity=true]{
+    transition: opacity 1000ms;
     opacity: 1;
   }
   [data-fade-bottom=true]{

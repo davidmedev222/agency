@@ -4,12 +4,13 @@ import { createGlobalStyle } from 'styled-components'
 const StylesProvider = createGlobalStyle`
   :root {
     // COLORS
-    --text-one: #ffffff;
-    --text-two: #bbbbbb;
+    --text-one: hsl(0, 0%, 100%);
+    --text-one-hover: hsl(0, 0%, 50%);
+    --text-two: hsl(0, 0%, 70%);
     // BACKGROUNDS
-    --background-one: #111111;
+    --background-one: hsl(0, 0%, 5%);
     // COMPONENTS
-    --i-component-one: #ffffff;
+    --i-component-one: hsl(0, 0%, 100%);
     // TYPOGRAPHY
     --family-one: 'Epilogue', sans-serif;
   }

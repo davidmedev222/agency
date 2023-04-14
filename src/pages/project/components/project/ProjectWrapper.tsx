@@ -1,3 +1,4 @@
+import { Social } from '@/components'
 import { Project } from '@/models/project.models'
 import { FirstTarget, Hero, SecondTarget, Testimony, Video } from '@/pages/project/components'
 
@@ -27,6 +28,7 @@ const ProjectWrapper = ({ project }: Props): JSX.Element => {
       <FirstTarget title={firstTitleTarget} description={firstDescriptionTarget} images={firstPhotosURL} />
       <Testimony {...testimony} />
       <SecondTarget title={secondTitleTarget} description={secondDescriptionTarget} images={secondPhotosURL} />
+      <Social />
     </>
   )
 }

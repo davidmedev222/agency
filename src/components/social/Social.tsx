@@ -18,11 +18,18 @@ const SocialEmail = styled(Link)`
   flex-flow: row nowrap;
   align-items: center;
   gap: clamp(.5rem, .5vw, 1rem);
+  transition: color 250ms;
 
   & svg {
     fill: var(--i-component-one);
     width: clamp(1.25rem, 1.5vw, 2rem);
     transform: rotate(-45deg);
+    transition: fill 250ms;
+  }
+
+  :hover {
+    color: var(--text-one-hover);
+    --i-component-one: var(--text-one-hover);
   }
 `
 const SocialList = styled('div')`
@@ -33,7 +40,13 @@ const SocialList = styled('div')`
 const SocialNetworkRedirect = styled(Link)`
   font-size: clamp(1rem, 2vw, 4rem);
   flex-basis: 50%;
+  transition: color 250ms;
+
+  :hover {
+    color: var(--text-one-hover);
+  }
 `
+
 const Social = (): JSX.Element => {
   const { social } = useGlobalProvider()
   const [ref1, isIntersecting1] = useIntersectionObserver({

@@ -6,6 +6,11 @@ const CareersItemStyled = styled('li')`
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
+  transition: color 250ms;
+
+  :hover {
+    color: var(--text-two);
+  }
 `
 const CareersItemJob = styled('h6')`
   font-size: clamp(1.25rem, 1.5vw, 3rem);
