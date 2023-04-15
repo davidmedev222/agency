@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 const HeroProjectStyled = styled('article')`
@@ -8,7 +7,7 @@ const HeroProjectStyled = styled('article')`
   align-items: flex-start;
   gap: clamp(1rem, 1vw, 2rem);
 `
-const HeroProjectRedirect = styled(Link)`
+const HeroProjectRedirect = styled('a')`
   width: 100%;
 `
 const HeroProjectImage = styled('img')`
@@ -38,7 +37,7 @@ interface Props {
 const HeroProject = ({ to, image, title, category }: Props): JSX.Element => {
   return (
     <HeroProjectStyled>
-      <HeroProjectRedirect to={`/project/${to}`}><HeroProjectImage src={image} alt={title} loading='lazy' /></HeroProjectRedirect>
+      <HeroProjectRedirect href={`/project/${to}`}><HeroProjectImage src={image} alt={title} loading='lazy' /></HeroProjectRedirect>
       <HeroProjectTitle>{title}</HeroProjectTitle>
       <HeroProjectCategory>{category}</HeroProjectCategory>
     </HeroProjectStyled>
