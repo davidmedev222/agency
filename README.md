@@ -10,7 +10,12 @@
 </ol>
 
 # **📸IMAGES**
-Coming Soon
+![](https://res.cloudinary.com/dos3i5jqy/image/upload/v1681519628/layers/agency/agency1_zg7d4m.jpg)
+![](https://res.cloudinary.com/dos3i5jqy/image/upload/v1681519628/layers/agency/agency2_cmmkp9.jpg)
+![](https://res.cloudinary.com/dos3i5jqy/image/upload/v1681519628/layers/agency/agency3_at1q5c.jpg)
+![](https://res.cloudinary.com/dos3i5jqy/image/upload/v1681519628/layers/agency/agency4_x9bkix.jpg)
+![](https://res.cloudinary.com/dos3i5jqy/image/upload/v1681519628/layers/agency/agency5_fervyp.jpg)
+![](https://res.cloudinary.com/dos3i5jqy/image/upload/v1681519628/layers/agency/agency6_v5yyhu.jpg)
 # **🚀DEMO**
 [https://devagency.vercel.app/](https://devagency.vercel.app/)
 
@@ -20,5 +25,5 @@ Agency, modern landing page where you can see the projects, clients, services, j
 
 # **🌐TECHNOLOGIES USED**
 
-Se uso `ViteJs` como framework de desarollo, `ReactTs` para el desarrollo de interfaces, `Styled Components` para el desarrollo de estilos, `Context API` para el manejo y gestión de estados globales, `React Router Dom` para enrutamiento del proyecto, `TS Standard` como linter de código, 
-`Pnpm` para la gestión de paquetes, `Git` para el control de versiones y `Github` para hospedar el código del proyecto.
+I used `ViteJs` as development framework, `ReactTs` for interface development, `Styled Components` for style development, `Context API` for global state handling and management, `React Router Dom` for project routing, `TS Standard` as code linter, 
+Pnpm for package management, Git for version control and Github for hosting the project code.
