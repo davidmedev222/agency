@@ -47,7 +47,7 @@ const Hero = (): JSX.Element => {
     threshold: 0
   }, true)
   const [ref2, isIntersecting2] = useIntersectionObserver({
-    threshold: 0.1
+    threshold: 0
   }, true)
 
   const projects = hero.projects.map((project) => {
